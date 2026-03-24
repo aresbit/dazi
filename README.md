@@ -6,7 +6,8 @@ A keybr-style typing trainer built as a static site.
 
 - Adaptive lessons that focus on your weak letters
 - Per-letter accuracy tracking
-- Progressive unlock of new letters
+- Full letter keys enabled by default (not limited to F/J)
+- Progressive unlock logic remains in code for optional future training mode
 - Works as a pure static website (GitHub Pages friendly)
 
 ## Local run

@@ -11,7 +11,8 @@ const resetBtn = document.getElementById('resetBtn');
 const lessons = ['fj', 'dk', 'sl', 'a;', 'gh', 'ru', 'ei', 'wo', 'cv', 'mn', 'ty', 'bpqxz'];
 
 const state = {
-  unlocked: 1,
+  // 默认全键位开放，避免一开始只练 f/j
+  unlocked: lessons.length,
   text: '',
   index: 0,
   startTime: Date.now(),
@@ -179,7 +180,8 @@ window.addEventListener('keydown', (e) => {
 newLessonBtn.addEventListener('click', generateLesson);
 
 resetBtn.addEventListener('click', () => {
-  state.unlocked = 1;
+  // 重置统计，但保持全键位可用
+  state.unlocked = lessons.length;
   state.correct = 0;
   state.wrong = 0;
   state.letterStats = Object.create(null);

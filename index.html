@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dazi - Smart Typing Trainer</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="topbar">
+        <h1>Dazi</h1>
+        <p>Typing trainer inspired by keybr-style adaptive practice.</p>
+      </header>
+
+      <section class="stats" aria-label="Session stats">
+        <div><span class="label">WPM</span><strong id="wpm">0</strong></div>
+        <div><span class="label">Accuracy</span><strong id="accuracy">100%</strong></div>
+        <div><span class="label">Correct</span><strong id="correct">0</strong></div>
+        <div><span class="label">Wrong</span><strong id="wrong">0</strong></div>
+        <div><span class="label">Level</span><strong id="level">1</strong></div>
+      </section>
+
+      <section class="lesson" aria-label="Typing lesson">
+        <p id="lessonText" class="lesson-text"></p>
+        <p class="hint">Type exactly. Use <kbd>Tab</kbd> for a new lesson.</p>
+      </section>
+
+      <section class="letter-panel">
+        <h2>Weak keys</h2>
+        <div id="weakKeys" class="weak-keys"></div>
+      </section>
+
+      <section class="keyboard" aria-label="Keyboard">
+        <div class="row"><span data-key="q">q</span><span data-key="w">w</span><span data-key="e">e</span><span data-key="r">r</span><span data-key="t">t</span><span data-key="y">y</span><span data-key="u">u</span><span data-key="i">i</span><span data-key="o">o</span><span data-key="p">p</span></div>
+        <div class="row"><span data-key="a">a</span><span data-key="s">s</span><span data-key="d">d</span><span data-key="f">f</span><span data-key="g">g</span><span data-key="h">h</span><span data-key="j">j</span><span data-key="k">k</span><span data-key="l">l</span><span data-key=";">;</span></div>
+        <div class="row"><span data-key="z">z</span><span data-key="x">x</span><span data-key="c">c</span><span data-key="v">v</span><span data-key="b">b</span><span data-key="n">n</span><span data-key="m">m</span></div>
+      </section>
+
+      <section class="actions">
+        <button id="newLessonBtn" type="button">New lesson</button>
+        <button id="resetBtn" type="button">Reset progress</button>
+      </section>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

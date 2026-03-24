@@ -4,10 +4,14 @@ A keybr-style typing trainer built as a static site.
 
 ## Features
 
-- Adaptive lessons that focus on your weak letters
-- Per-letter accuracy tracking
 - Full letter keys enabled by default (not limited to F/J)
-- Progressive unlock logic remains in code for optional future training mode
+- Adaptive pseudo-word generator with bigram-like transitions
+- Per-key accuracy tracking and keyboard error heatmap
+- Two modes:
+  - Adaptive words
+  - Code lesson (micrograd-c snippets)
+- Course config export/import (`dazi-config.json`)
+- Chinese / English UI switching
 - Works as a pure static website (GitHub Pages friendly)
 
 ## Local run
@@ -28,4 +32,5 @@ After pushing to `main`:
 
 ## Notes
 
-The implementation is original code inspired by keybr-style adaptive training principles, not copied assets or source code.
+The implementation is original code inspired by keybr-style adaptive training principles.
+Code lesson text references snippets from `https://github.com/aresbit/micrograd-c`.

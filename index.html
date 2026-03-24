@@ -9,26 +9,51 @@
   <body>
     <main class="app">
       <header class="topbar">
-        <h1>Dazi</h1>
-        <p>Typing trainer inspired by keybr-style adaptive practice.</p>
+        <div>
+          <h1>Dazi</h1>
+          <p id="subtitle">Typing trainer inspired by keybr-style adaptive practice.</p>
+        </div>
+        <div class="toolbar">
+          <label>
+            <span id="langLabel">Language</span>
+            <select id="langSelect">
+              <option value="en">English</option>
+              <option value="zh">中文</option>
+            </select>
+          </label>
+          <label>
+            <span id="modeLabel">Mode</span>
+            <select id="modeSelect">
+              <option value="adaptive">Adaptive words</option>
+              <option value="code">Code lesson</option>
+            </select>
+          </label>
+        </div>
       </header>
 
       <section class="stats" aria-label="Session stats">
-        <div><span class="label">WPM</span><strong id="wpm">0</strong></div>
-        <div><span class="label">Accuracy</span><strong id="accuracy">100%</strong></div>
-        <div><span class="label">Correct</span><strong id="correct">0</strong></div>
-        <div><span class="label">Wrong</span><strong id="wrong">0</strong></div>
-        <div><span class="label">Level</span><strong id="level">1</strong></div>
+        <div><span class="label" id="wpmLabel">WPM</span><strong id="wpm">0</strong></div>
+        <div><span class="label" id="accLabel">Accuracy</span><strong id="accuracy">100%</strong></div>
+        <div><span class="label" id="correctLabel">Correct</span><strong id="correct">0</strong></div>
+        <div><span class="label" id="wrongLabel">Wrong</span><strong id="wrong">0</strong></div>
+        <div><span class="label" id="levelLabel">Level</span><strong id="level">1</strong></div>
       </section>
 
       <section class="lesson" aria-label="Typing lesson">
-        <p id="lessonText" class="lesson-text"></p>
-        <p class="hint">Type exactly. Use <kbd>Tab</kbd> for a new lesson.</p>
+        <pre id="lessonText" class="lesson-text"></pre>
+        <p class="hint" id="hintText">Type exactly. Use <kbd>Tab</kbd> for a new lesson.</p>
       </section>
 
-      <section class="letter-panel">
-        <h2>Weak keys</h2>
-        <div id="weakKeys" class="weak-keys"></div>
+      <section class="panel-grid">
+        <section class="letter-panel">
+          <h2 id="weakTitle">Weak keys</h2>
+          <div id="weakKeys" class="weak-keys"></div>
+        </section>
+
+        <section class="letter-panel">
+          <h2 id="heatTitle">Error heatmap</h2>
+          <p class="panel-note" id="heatNote">Red means more mistakes on that key.</p>
+        </section>
       </section>
 
       <section class="keyboard" aria-label="Keyboard">
@@ -40,6 +65,9 @@
       <section class="actions">
         <button id="newLessonBtn" type="button">New lesson</button>
         <button id="resetBtn" type="button">Reset progress</button>
+        <button id="exportBtn" type="button">Export config</button>
+        <button id="importBtn" type="button">Import config</button>
+        <input id="importFile" type="file" accept="application/json" hidden />
       </section>
     </main>
 
